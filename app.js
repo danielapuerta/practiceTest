@@ -5,7 +5,7 @@ const express = require('express');
 const app = express();
 
 //creates our port
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 //to join the path
 const path = require('path');
@@ -34,9 +34,11 @@ app.get('/login', function(req, res) {
 
 app.post('/api/login', function(req, res){
     //create an object
-    let name = req.body.name;
-    console.log("Your name is: " + name);
-    res.send("data recieved: " + name);
+    let userName = req.body.userName;
+    let password = req.body.password;
+    console.log("Your username is: " + userName);
+    console.log("Your password is: " + password);
+    res.send("data recieved: " + userName + password);
     
 })
 

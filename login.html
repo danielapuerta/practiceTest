@@ -1,7 +1,17 @@
 
-<h1>Name Form</h1>
+<h1>Login Form</h1>
 
-<form method="POST" action="/api/login">
-  <input type="text" name="name" />
-  <input type="submit" />
-</form>
+<form action="/api/login" method="post" class="form-example">
+    <div class="form-example">
+      <label for="userName">Enter your username: </label>
+      <input type="text" name="userName" id="userName" required>
+    </div>
+    <div class="form-example">
+      <label for="password">Enter your password: </label>
+      <input type="password" name="password" id="password" required>
+    </div>
+    <div class="form-example">
+      <input type="submit" value="Login">
+    </div>
+  </form>
+
