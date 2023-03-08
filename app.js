@@ -36,11 +36,14 @@ app.get('/login', function(req, res) {
 
 app.post('/api/login', function(req, res){
     //create an object
-    let userName = req.body.userName;
-    let password = req.body.password;
+    const userObj = {
+        userName: req.body.userName,
+        password : req.body.passord
+    }
+
     console.log("Your username is: " + userName);
     console.log("Your password is: " + password);
-    res.send("data recieved: " + userName + password);
+    res.send("data recieved: " + userObj);
     
 })
 
