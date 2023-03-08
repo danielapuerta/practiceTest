@@ -27,6 +27,11 @@ app.use(express.urlencoded());
 
 const db = require('./models/index.js');
 
+const exphbs = require('express-handlebars');
+
+app.engine('handlebars', exphbs().engine);
+app.set('view engine', 'handlebars');
+
 //sets a basic route
 app.get('/', (req,res) => res.send("Hello World"));
 
