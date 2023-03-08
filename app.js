@@ -25,6 +25,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 // is a method inbuilt in express to recognize the incoming Request Object as strings or arrays.
 app.use(express.urlencoded());
 
+const db = require('./models/index.js');
+
 //sets a basic route
 app.get('/', (req,res) => res.send("Hello World"));
 
