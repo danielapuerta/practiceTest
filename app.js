@@ -36,14 +36,20 @@ app.get('/login', function(req, res) {
 
 app.post('/api/login', function(req, res){
     //create an object
-    const userObj = {
+    const oUser = {
         userName: req.body.userName,
         password : req.body.passord
     }
 
-    console.log("Your username is: " + userName);
-    console.log("Your password is: " + password);
-    res.send("data recieved: " + userObj);
+    db.Users.findOrCreate({where: {userName: oUser.userName, password: oUser.password}})
+    .then(([userObj, created]) => {
+
+        console.log("Your username is: " + userName);
+        console.log("Your password is: " + password);
+        res.send("data recieved: " + userObj);
+    });
+
+
     
 })
 
